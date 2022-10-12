@@ -1,0 +1,722 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Commissioner", sans-serif;
+}
+
+// colors
+$Moderatecyan: hsl(176, 50%, 47%);
+$Darkcyan: hsl(176, 72%, 28%);
+$Black: hsl(0, 0%, 0%);
+$Darkgray: hsl(0, 0%, 48%);
+$White: hsl(0, 0%, 100%);
+$Gray: hsl(0, 0%, 98%);
+$LightGray: rgba(232, 232, 232, 0.747);
+$FadeBlack: rgba(0, 0, 0, 0.13);
+
+body {
+  background: $Gray;
+}
+
+//? dividers in mobile menu
+hr {
+  border: none;
+  height: 1px;
+  background: $LightGray;
+}
+
+header {
+  width: 100%;
+  position: relative;
+  .mobile-banner {
+    display: block;
+    @media screen and (min-width: 700px) {
+      display: none;
+    }
+  }
+  .desktop-banner {
+    display: none;
+    @media screen and (min-width: 700px) {
+      display: block;
+    }
+  }
+  nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // background: teal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    @media screen and (min-width: 700px) {
+      width: 80%;
+      left: 50%;
+      translate: -50%;
+    }
+    .logo,
+    .menuBtn {
+      z-index: 2;
+    }
+    .menuBtn {
+      @media screen and (min-width: 700px) {
+        display: none;
+      }
+    }
+    .nav-list {
+      display: none;
+      list-style: none;
+      position: absolute;
+      top: 5rem;
+      left: 50%;
+      width: 90%;
+      translate: -50%;
+      border-radius: 5px;
+      background: $White;
+      z-index: 10;
+      @media screen and (min-width: 700px) {
+        width: auto;
+        position: static;
+        translate: 0;
+        display: flex;
+        background: none;
+      }
+      li {
+        padding: 1.3rem 1.5rem;
+        a {
+          text-decoration: none;
+          font-size: 1.1rem;
+          font-weight: 500;
+          color: $Black;
+          @media screen and (min-width: 700px) {
+            color: $White;
+            font-size: 1rem;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  position: relative;
+  top: -4rem;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  .main-content {
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+    // align-items: center;
+    gap: 1.5rem;
+    @media screen and (min-width: 700px) {
+      width: 50%;
+    }
+    //   mastercraft
+    .mastercraft {
+      position: relative;
+      padding: 3.5rem 2rem 1.5rem;
+      border: 1px solid $LightGray;
+      border-radius: 10px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      gap: 1rem;
+      background: white;
+      @media screen and (min-width: 700px) {
+        padding: 3.5rem 2rem;
+      }
+      .mastercraft-logo {
+        position: absolute;
+        top: -12%;
+        left: 50%;
+        translate: -50%;
+      }
+      .heading {
+        text-align: center;
+        font-size: 1.3rem;
+        @media screen and (min-width: 700px) {
+          font-size: 1.5rem;
+        }
+      }
+      .caption {
+        text-align: center;
+        font-size: 0.85rem;
+        font-weight: 500;
+        line-height: 1.5em;
+        color: $Darkgray;
+      }
+      .btn-group {
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        @media screen and (min-width: 700px) {
+          width: 90%;
+          justify-content: space-between;
+          margin-top: 1rem;
+        }
+        .backBtn {
+          font-size: 0.9rem;
+          font-weight: 500;
+          padding: 1rem 2.5rem;
+          border: none;
+          border-radius: 50px;
+          color: $White;
+          background: $Moderatecyan;
+          @media screen and (max-width: 1000px) {
+            padding: 1rem 1.5rem;
+          }
+        }
+        .bookmarkBtn {
+          //   height: 3.3rem;
+          //   aspect-ratio: 1;
+          @media screen and (min-width: 700px) {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+          }
+          .text {
+            display: none;
+            @media screen and (min-width: 700px) {
+              display: block;
+              margin-left: -2rem;
+              padding: 1rem 3rem;
+              border-radius: 0 50px 50px 0;
+              font-weight: 500;
+              background: $LightGray;
+            }
+            @media screen and (max-width: 950px) {
+              padding: 1rem 2rem;
+              font-size: 0.9rem;
+            }
+          }
+          svg {
+            z-index: 2;
+            path {
+              fill: $White;
+            }
+            &:hover {
+              circle {
+                fill: $Darkgray;
+              }
+            }
+          }
+        }
+      }
+    }
+    //   stats
+    .stats {
+      width: 100%;
+      border: 1px solid $LightGray;
+      border-radius: 10px;
+      padding: 2rem 0;
+      background: $White;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      @media screen and (min-width: 700px) {
+        padding: 2rem;
+      }
+      .stat-content {
+        text-align: center;
+        display: flex;
+        flex-flow: column;
+        gap: 1.5rem;
+        @media screen and (min-width: 700px) {
+          width: 100%;
+          // background: teal;
+          flex-flow: row;
+          align-items: center;
+          gap: 0;
+          & > div {
+            flex: 1;
+          }
+          hr {
+            width: 10%;
+            rotate: 90deg;
+          }
+        }
+        h1 {
+          color: $Black;
+          padding-bottom: 0.3rem;
+        }
+        span {
+          font-size: 0.9rem;
+          font-weight: 400;
+          color: $Darkgray;
+        }
+      }
+      hr {
+        border: none;
+        height: 1px;
+        background: $FadeBlack;
+        width: 70%;
+        margin: 0 auto;
+      }
+      .progress-bar {
+        position: relative;
+        width: 85%;
+        height: 0.8rem;
+        border-radius: 50px;
+        margin-top: 1.5rem;
+        background: $LightGray;
+        overflow: hidden;
+        @media screen and (min-width: 700px) {
+          width: 100%;
+          margin-top: 2rem;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 70%;
+          border-radius: 50px;
+          background: $Moderatecyan;
+        }
+      }
+    }
+    //   About
+    .about {
+      background: $White;
+      border: 1px solid $LightGray;
+      border-radius: 10px;
+      padding: 2.5rem 1.5rem;
+      @media screen and (min-width: 700px) {
+        padding: 2.5rem 2rem;
+      }
+      .heading {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        @media screen and (min-width: 700px) {
+          font-size: 1.5rem;
+        }
+      }
+      .description {
+        font-size: 0.895rem;
+        font-size: 0.9rem;
+        font-weight: 400;
+        line-height: 1.5em;
+        color: $Darkgray;
+        @media screen and (min-width: 700px) {
+          font-size: 1rem;
+          line-height: 1.8em;
+        }
+        & + .two {
+          margin-top: 1rem;
+          margin-bottom: 2rem;
+        }
+      }
+      .rewards {
+        display: flex;
+        flex-flow: column;
+        gap: 1.5rem;
+        .card {
+          border: 1px solid $FadeBlack;
+          border-radius: 10px;
+          padding: 1.5rem 1.3rem;
+          @media screen and (min-width: 700px) {
+            padding: 1.5rem;
+          }
+          .header {
+            @media screen and (min-width: 700px) {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+            .product-name {
+              font-size: 1rem;
+              margin-bottom: 0.5rem;
+              @media screen and (min-width: 700px) {
+                font-size: 1.3rem;
+              }
+            }
+            .pledge-text {
+              font-size: 0.9rem;
+              font-weight: 500;
+              color: $Moderatecyan;
+              @media screen and (min-width: 700px) {
+                font-size: 1rem;
+              }
+            }
+          }
+          .caption {
+            font-size: 0.9rem;
+            line-height: 1.5em;
+            margin: 1.5rem 0;
+            color: $Darkgray;
+            @media screen and (min-width: 700px) {
+              font-size: 1rem;
+            }
+          }
+          .bottom {
+            @media screen and (min-width: 700px) {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+            .left {
+              display: flex;
+              align-items: center;
+              gap: 0.7rem;
+              margin-bottom: 1.5rem;
+              @media screen and (min-width: 700px) {
+                margin: 0;
+              }
+              .number {
+                font-weight: 700;
+              }
+              span {
+                font-weight: 400;
+                color: $Darkgray;
+              }
+            }
+            .rewardBtn {
+              font-size: 0.9rem;
+              font-weight: 500;
+              padding: 1rem 2.3rem;
+              border: none;
+              border-radius: 50px;
+              color: $White;
+              background: $Moderatecyan;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//> default styling for all the buttons
+button {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: $Darkcyan !important;
+  }
+}
+
+// Back this project Modal
+.back-this-project {
+  position: absolute;
+  top: 7rem;
+  left: 50%;
+  translate: -50%;
+  display: none;
+  margin: 0 auto;
+  width: 90%;
+  padding: 2rem 1.5rem;
+  border: 1px solid $LightGray;
+  border-radius: 10px;
+  background: $White;
+  z-index: 10;
+  @media screen and (min-width: 700px) {
+    width: 50%;
+    top: 10rem;
+    padding: 2rem;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    h1 {
+      font-size: 1.2rem;
+      @media screen and (min-width: 700px) {
+        font-size: 1.5rem;
+      }
+    }
+    .close-modalBtn {
+      cursor: pointer;
+    }
+  }
+  .caption {
+    font-size: 0.9rem;
+    line-height: 1.5em;
+    margin-bottom: 1.5rem;
+    color: $Darkgray;
+    @media screen and (min-width: 700px) {
+      font-size: 1rem;
+    }
+  }
+  .rewards-list {
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+    .card {
+      position: relative;
+      border: 1px solid $FadeBlack;
+      border-radius: 10px;
+      padding: 2rem 1.5rem;
+      overflow: hidden;
+      .check-radio {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        input[type="radio"] {
+          position: relative;
+          height: 1.4rem;
+          aspect-ratio: 1;
+          appearance: none;
+          border-radius: 50%;
+          /* The outline will be the outer circle */
+          outline: 1px solid $FadeBlack;
+          // overflow: hidden;
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            width: 60%;
+            height: 60%;
+            display: none;
+            border-radius: 50%;
+            background: $Moderatecyan;
+          }
+          &:checked::after {
+            display: block;
+          }
+        }
+        .check-text {
+          @media screen and (min-width: 700px) {
+            display: flex;
+            align-items: center;
+          }
+          .name {
+            font-size: 0.9rem;
+            font-weight: 700;
+          }
+          .pledge {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            color: $Moderatecyan;
+            @media screen and (min-width: 700px) {
+              margin: 0;
+              margin-left: 2rem;
+            }
+          }
+        }
+      }
+      .card-text {
+        font-size: 0.9rem;
+        line-height: 1.5em;
+        color: $Darkgray;
+        @media screen and (min-width: 700px) {
+          margin-left: 2.2rem;
+        }
+      }
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        margin-top: 1.8rem;
+        @media screen and (min-width: 700px) {
+          position: absolute;
+          top: 0;
+          right: 2rem;
+        }
+        .number {
+          font-size: 1.3rem;
+          color: $Black;
+        }
+        span {
+          color: $Darkgray;
+        }
+      }
+
+      .divider-desktop {
+        display: none;
+        @media screen and (min-width: 700px) {
+          display: none;
+          position: relative;
+          left: 50%;
+          translate: -50%;
+          margin: 1.5rem 0;
+          width: calc(100% + 3rem);
+          height: 1px;
+          background: $FadeBlack;
+        }
+      }
+
+      .pledge-input {
+        display: none;
+        @media screen and (min-width: 700px) {
+          position: relative;
+          display: none;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .divider {
+          position: relative;
+          left: 50%;
+          translate: -50%;
+          margin: 1.5rem 0 2rem;
+          width: calc(100% + 3rem);
+          height: 1px;
+          background: $FadeBlack;
+          @media screen and (min-width: 700px) {
+            display: none;
+          }
+        }
+        .heading {
+          text-align: center;
+          font-size: 0.9rem;
+          color: $Darkgray;
+        }
+        .pledge-container {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-top: 1.3rem;
+          @media screen and (min-width: 700px) {
+            margin: 0;
+          }
+          .input-group {
+            display: flex;
+            align-items: center;
+            border: 2px solid $FadeBlack;
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            label {
+              font-weight: 700;
+              color: rgba(0, 0, 0, 0.274);
+            }
+            input {
+              border: none;
+              max-width: 4rem;
+              padding: 0.5rem;
+              font-size: 0.9rem;
+              font-weight: 700;
+              &:focus {
+                outline: none;
+              }
+            }
+          }
+          .continueBtn {
+            width: 100%;
+            padding: 1rem 0;
+            border: none;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: $White;
+            background: $Moderatecyan;
+            @media screen and (min-width: 700px) {
+              padding: 1rem 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Completed Modal
+.completed-modal {
+  position: absolute;
+  top: 7rem;
+  left: 50%;
+  translate: -50%;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  border: 1px solid $LightGray;
+  border-radius: 10px;
+  display: none;
+  flex-flow: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  background: $White;
+  z-index: 20;
+  @media screen and (min-width: 700px) {
+    width: 35%;
+    max-width: 29rem;
+    top: 15rem;
+  }
+  .heading {
+    font-size: 1.3rem;
+    color: $Black;
+  }
+  .caption {
+    font-size: 0.9rem;
+    line-height: 1.7em;
+    color: $Darkgray;
+  }
+  .gotitBtn {
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    color: $White;
+    background: $Moderatecyan;
+  }
+}
+
+//| utilities
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  button {
+    background: $Darkgray !important;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 100%;
+  display: none;
+  background: rgba(0, 0, 0, 0.452);
+  z-index: 1;
+}
+
+.overlay-active {
+  .overlay {
+    display: block !important;
+  }
+}
+.active {
+  display: block !important;
+}
+.active-flex {
+  display: flex !important;
+}
+
+.active-back-this-project-card {
+  border: 2px solid $Moderatecyan !important;
+  .pledge-input {
+    display: block !important;
+    @media screen and (min-width: 700px) {
+      display: flex !important;
+      .divider-desktop {
+        display: block !important;
+      }
+    }
+  }
+}
+
+.active-bookmark {
+  .text {
+    font-weight: 700;
+    color: $Darkcyan !important;
+  }
+  svg {
+    circle {
+      fill: $Darkcyan;
+    }
+  }
+}

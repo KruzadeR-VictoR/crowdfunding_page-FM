@@ -24,6 +24,7 @@ header {
 
 header .mobile-banner {
   display: block;
+  width: 100%;
 }
 
 @media screen and (min-width: 700px) {
@@ -39,6 +40,7 @@ header .desktop-banner {
 @media screen and (min-width: 700px) {
   header .desktop-banner {
     display: block;
+    width: 100%;
   }
 }
 
